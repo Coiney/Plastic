@@ -1,0 +1,42 @@
+// CoineyKit
+// Copyright © Coiney Inc. All rights reserved.
+// For licensing information, contact info@coiney.com.
+
+#import <UIKit/UIKit.h>
+//#import "CYKeypadView.h"
+
+typedef NS_ENUM(NSInteger, CYCardBrand) {
+    CYUnknownCardBrand,
+    CYMasterCard,
+    CYVisa,
+    CYAmericanExpress,
+    CYJCB,
+    CYDiners,
+    CYDiscover
+};
+
+@class CYCardEntryView;
+
+@protocol CYCardEntryViewDelegate <NSObject>
+- (void)cardEntryView:(CYCardEntryView * const)aView validityDidChange:(BOOL)aFlag;
+@end
+
+@interface CYCardEntryView : UIView
+@property(nonatomic, readonly) NSString *cardNumber;
+@property(nonatomic, readonly) CYCardBrand cardBrand;
+@property(nonatomic, readonly) NSDate   *expiryDate;
+@property(nonatomic, readonly) NSString *cvc;
+
+@property(nonatomic, strong) NSString *cardNumberPlaceholder, *expiryPlaceholder, *cvcPlaceholder;
+@property(nonatomic, assign) BOOL collapsesCardNumberField;
+
+@property(nonatomic, weak) id<CYCardEntryViewDelegate> delegate;
+
+- (void)setUsesSystemKeyboard:(BOOL)aFlag;  // YES by default
+
+// Use with a custom keypad widget, i.e., when not using the system keyboard
+- (void)insertText:(NSString *)aText;
+- (void)backspace;
+- (void)clear;
+
+@end
