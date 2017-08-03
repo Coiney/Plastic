@@ -3,17 +3,8 @@
 // For licensing information, contact info@coiney.com.
 
 #import <UIKit/UIKit.h>
+#import "CYCardBrandFunctions.h"
 //#import "CYKeypadView.h"
-
-typedef NS_ENUM(NSInteger, CYCardBrand) {
-    CYUnknownCardBrand,
-    CYMasterCard,
-    CYVisa,
-    CYAmericanExpress,
-    CYJCB,
-    CYDiners,
-    CYDiscover
-};
 
 @class CYCardEntryView;
 

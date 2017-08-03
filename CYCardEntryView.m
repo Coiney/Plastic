@@ -1,12 +1,12 @@
-#import "CYCardEntryView.h"
+// CoineyKit
+// Copyright © Coiney Inc. All rights reserved.
+// For licensing information, contact info@coiney.com.
 
-#if !defined(INRANGE)
-#   define __INRANGE(val, low, high, c) ({ \
-        __typeof(val) const __val##c = (val); \
-        __val##c >= (low) && __val##c <= (high); \
-    })
-#   define INRANGE(val, low, high) __INRANGE((val), (low), (high), __COUNTER__)
-#endif
+#import "CYCardEntryView.h"
+#import "NSString+CoineyAdditions.h"
+#import "UIView+CoineyAdditions.h"
+
+static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 @interface CYCardNumberField : UITextField
 @property(nonatomic, readonly) CYCardEntryView *cardEntryView;
@@ -42,27 +42,6 @@
 - (void)updateHintLabel;
 @end
 
-static CYCardBrand _CYCardBrandFromNumber(NSString * aCardNumber);
-static NSUInteger _CYNumberOfDigitsForCardBrand(CYCardBrand aCardBrand);
-static NSUInteger _CYCVCLengthForCardBrand(CYCardBrand aCardBrand);
-static NSString * _NSStringFromCYCardbrand(CYCardBrand aCardBrand);
-static BOOL _CYLuhnCheck(NSString * aCardNumber);
-static NSString * _CYFormatCardNumber(NSString * aCardNumber);
-static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
-
-@interface NSString (CYCardEntryAdditions)
-- (NSString *)cy_strippedString;
-- (NSString *)cy_stringByStrippingAllButNumbers;
-- (BOOL)cy_isNumeric;
-@end
-
-@interface UIView (CYCardEntryAdditions)
-- (BOOL)cy_enumerateSubviews:(void (^)(UIView *aView, BOOL *aoShouldStop))aBlock
-                 recursively:(BOOL)aRecursive;
-- (UIView *)cy_subviewPassing:(BOOL (^)(UIView *aView))aBlock;
-- (UIView *)cy_findFirstResponder;
-@end
-
 @implementation CYCardNumberField
 @dynamic cardNumber, cardBrand;
 
@@ -76,13 +55,13 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 - (void)setCardNumber:(NSString * const)aText
 {
-    [super setText:_CYFormatCardNumber(aText)];
+    [super setText:CYFormatCardNumber(aText)];
     
     CYCardBrand const brand = self.cardBrand;
     BOOL partiallyValid = self.text.length < 2 || brand != CYUnknownCardBrand;
     
-    if ([self.cardNumber length] == _CYNumberOfDigitsForCardBrand(brand)) {
-        self.textColor = _CYLuhnCheck(self.cardNumber) && brand != CYUnknownCardBrand
+    if ([self.cardNumber length] == NumberOfDigitsForCardBrand(brand)) {
+        self.textColor = LuhnCheck(self.cardNumber) && brand != CYUnknownCardBrand
                          ? [UIColor darkGrayColor]
                          : [UIColor redColor];
     } else {
@@ -102,13 +81,13 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
         return NO;
     }
     
-    return [self.cardNumber length] == _CYNumberOfDigitsForCardBrand(brand) &&
-           _CYLuhnCheck(self.cardNumber);
+    return [self.cardNumber length] == NumberOfDigitsForCardBrand(brand) &&
+           LuhnCheck(self.cardNumber);
 }
 
 - (CYCardBrand)cardBrand
 {
-    return _CYCardBrandFromNumber(self.cardNumber);
+    return CYCardBrandFromNumber(self.cardNumber);
 }
 
 - (CYCardEntryView *)cardEntryView
@@ -118,7 +97,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 - (NSUInteger)maxLength
 {
-    return _CYNumberOfDigitsForCardBrand(self.cardBrand);
+    return NumberOfDigitsForCardBrand(self.cardBrand);
 }
 
 - (BOOL)becomeFirstResponder
@@ -241,12 +220,12 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 - (BOOL)textIsValidCVC
 {
-    return [self.text length] == _CYCVCLengthForCardBrand(self.cardEntryView.cardBrand);
+    return [self.text length] == CVCLengthForCardBrand(self.cardEntryView.cardBrand);
 }
 
 - (void)setText:(NSString *)aText
 {
-    NSUInteger const maxLength = _CYCVCLengthForCardBrand(self.cardEntryView.cardBrand);
+    NSUInteger const maxLength = CVCLengthForCardBrand(self.cardEntryView.cardBrand);
     [super setText:(aText.length <= maxLength ? aText : [aText substringToIndex:maxLength])];
 }
 
@@ -263,7 +242,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 - (NSUInteger)maxLength
 {
-    return _CYCVCLengthForCardBrand(self.cardEntryView.cardBrand);
+    return CVCLengthForCardBrand(self.cardEntryView.cardBrand);
 }
 
 - (BOOL)becomeFirstResponder
@@ -687,181 +666,6 @@ shouldChangeCharactersInRange:(NSRange)aRange
 
 @end
 
-@implementation NSString (CYCardEntryAdditions)
-
-- (NSString *)cy_strippedString
-{
-    return [self stringByReplacingOccurrencesOfString:@"[\\n\\s]+"
-                                           withString:@""
-                                              options:NSRegularExpressionSearch
-                                                range:(NSRange) { 0, [self length] }];
-}
-
-- (NSString *)cy_stringByStrippingAllButNumbers
-{
-    return [self stringByReplacingOccurrencesOfString:@"[^0-9]"
-                                           withString:@""
-                                              options:NSRegularExpressionSearch
-                                                range:(NSRange) { 0, self.length }];
-}
-
-- (BOOL)cy_isNumeric
-{
-    NSRegularExpression * const regex = [NSRegularExpression regularExpressionWithPattern:@"[^0-9]+"
-                                                                                  options:0
-                                                                                    error:nil];
-    return [regex numberOfMatchesInString:self
-                                  options:0
-                                    range:(NSRange) { 0, [self length] }] == 0;
-}
-
-@end
-
-@implementation UIView (CYCardEntryAdditions)
-
-- (BOOL)cy_enumerateSubviews:(void (^)(UIView *aView, BOOL *aoShouldStop))aBlock
-                 recursively:(BOOL const)aRecursive
-{
-    // Breadth first
-    BOOL shouldStop = NO;
-    for (UIView *subview in self.subviews) {
-        aBlock(subview, &shouldStop);
-        if (shouldStop) {
-            return NO;
-        }
-    }
-    if (aRecursive) {
-        for (UIView *subview in self.subviews) {
-            if (![subview cy_enumerateSubviews:aBlock recursively:YES]) {
-                return NO;
-            }
-        }
-    }
-    return YES;
-}
-
-- (UIView *)cy_subviewPassing:(BOOL (^)(UIView *aView))aBlock
-{
-    __block UIView *result = nil;
-    [self cy_enumerateSubviews:^(UIView *aView, BOOL *aoShouldStop) {
-        if (aBlock(aView)) {
-            result = aView;
-            *aoShouldStop = YES;
-        }
-    } recursively:YES];
-    return result;
-}
-
-- (UIView *)cy_findFirstResponder
-{
-    return [self cy_subviewPassing:^BOOL(UIView *aView) {
-        return aView.isFirstResponder;
-    }];
-}
-
-@end
-
-CYCardBrand _CYCardBrandFromNumber(NSString * const aCardNumber)
-{
-    NSCParameterAssert(aCardNumber.length == 0 || [aCardNumber cy_isNumeric]);
-    
-    if (aCardNumber.length == 0) {
-        return CYUnknownCardBrand;
-    } else if ([aCardNumber hasPrefix:@"4"]) {
-        return CYVisa;
-    } else if ([aCardNumber length] < 2) {
-        return CYUnknownCardBrand;
-    }
-    
-    NSInteger const firstTwoDigits = [[aCardNumber substringToIndex:2] integerValue];
-    if (INRANGE(firstTwoDigits, 50, 55)) {
-        return CYMasterCard;
-    } else if (firstTwoDigits == 34 || firstTwoDigits == 37) {
-        return CYAmericanExpress;
-    } else if (firstTwoDigits == 35) {
-        return CYJCB;
-    } else if (firstTwoDigits == 30 || firstTwoDigits == 36 || firstTwoDigits == 38 || firstTwoDigits == 39) {
-        return CYDiners;
-    } else if (firstTwoDigits == 65 || ([aCardNumber length] >= 4 && [[aCardNumber substringToIndex:4] integerValue] == 6011)) {
-        return CYDiscover;
-    } else {
-        return CYUnknownCardBrand;
-    }
-}
-
-NSUInteger _CYNumberOfDigitsForCardBrand(CYCardBrand const aCardBrand)
-{
-    switch (aCardBrand) {
-        case CYAmericanExpress:
-            return 15;
-        case CYDiners:
-            return 14;
-        default:
-            return 16;
-    }
-}
-
-NSUInteger _CYCVCLengthForCardBrand(CYCardBrand const aCardBrand)
-{
-    return aCardBrand == CYAmericanExpress ? 4 : 3;
-}
-
-NSString * _NSStringFromCYCardbrand(CYCardBrand const aCardBrand)
-{
-    switch (aCardBrand) {
-        case CYVisa:            return @"Visa";
-        case CYMasterCard:      return @"MasterCard";
-        case CYAmericanExpress: return @"AmericanExpress";
-        case CYJCB:             return @"JCB";
-        case CYDiners:          return @"Diners";
-        case CYDiscover:        return @"Discover";
-        case CYUnknownCardBrand:
-            return @"Unknown";
-    }
-}
-
-BOOL _CYLuhnCheck(NSString * const aCardNumber)
-{
-    NSCParameterAssert([aCardNumber cy_isNumeric]);
-    
-    NSUInteger digit, sum = 0;
-    for (NSUInteger i = 0; i < [aCardNumber length]; ++i) {
-        digit = digittoint([aCardNumber characterAtIndex:i]);
-        if ((aCardNumber.length - i) % 2 == 0) {
-            sum += (digit * 2 / 10) + (digit * 2 % 10);
-        } else {
-            sum += digit;
-        }
-    }
-    return sum % 10 == 0;
-}
-
-NSString *_CYFormatCardNumber(NSString * aCardNumber)
-{
-    NSCParameterAssert([aCardNumber cy_isNumeric]);
-    CYCardBrand const brand = _CYCardBrandFromNumber(aCardNumber);
-    
-    if ([aCardNumber length] > _CYNumberOfDigitsForCardBrand(brand)) {
-        aCardNumber = [aCardNumber substringToIndex:_CYNumberOfDigitsForCardBrand(brand)];
-    }
-    
-    NSMutableString * const formatted = [aCardNumber mutableCopy];
-    switch(brand) {
-        case CYAmericanExpress:
-        case CYDiners:
-            // xxxx xxxxxx xxxxx
-            if ([formatted length] >= 5)  [formatted insertString:@" " atIndex:4];
-            if ([formatted length] >= 12) [formatted insertString:@" " atIndex:11];
-            break;
-        default:
-            // xxxx xxxx xxxx xxxx
-            if ([formatted length] >= 5)  [formatted insertString:@" " atIndex:4];
-            if ([formatted length] >= 10) [formatted insertString:@" " atIndex:9];
-            if ([formatted length] >= 15) [formatted insertString:@" " atIndex:14];
-    }
-    return formatted;
-}
-
 UIImage * _CYImageForCardBrand(CYCardBrand const aCardBrand)
 {
     static NSCache *icons;
@@ -873,7 +677,7 @@ UIImage * _CYImageForCardBrand(CYCardBrand const aCardBrand)
         UIImage * icon = [icons objectForKey:@(aCardBrand)];
         if (!icon) {
             NSString * const imageName =
-                [NSString stringWithFormat:@"CardIssuer%@", _NSStringFromCYCardbrand(aCardBrand)];
+                [NSString stringWithFormat:@"CardIssuer%@", NSStringFromCYCardBrand(aCardBrand)];
             icon = [UIImage imageNamed:imageName];
             if (icon) {
                 [icons setObject:icon forKey:@(aCardBrand)];

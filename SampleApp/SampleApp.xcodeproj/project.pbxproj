@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC5EE7A61F32B2B000E8B540 /* CYCardBrandFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5EE7A51F32B2B000E8B540 /* CYCardBrandFunctions.m */; };
+		DC5EE7AA1F32B47000E8B540 /* NSString+CoineyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5EE7A91F32B47000E8B540 /* NSString+CoineyAdditions.m */; };
+		DC5EE7AD1F32B53100E8B540 /* UIView+CoineyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5EE7AC1F32B53100E8B540 /* UIView+CoineyAdditions.m */; };
 		DC7AEE0E1F2F3876009BA72E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7AEE0D1F2F3876009BA72E /* AppDelegate.swift */; };
 		DC7AEE101F2F3877009BA72E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7AEE0F1F2F3877009BA72E /* ViewController.swift */; };
 		DC7AEE131F2F3877009BA72E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC7AEE111F2F3877009BA72E /* Main.storyboard */; };
@@ -35,6 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC5EE7A51F32B2B000E8B540 /* CYCardBrandFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCardBrandFunctions.m; sourceTree = "<group>"; };
+		DC5EE7A71F32B2BF00E8B540 /* CYCardBrandFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYCardBrandFunctions.h; sourceTree = "<group>"; };
+		DC5EE7A81F32B47000E8B540 /* NSString+CoineyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CoineyAdditions.h"; sourceTree = "<group>"; };
+		DC5EE7A91F32B47000E8B540 /* NSString+CoineyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CoineyAdditions.m"; sourceTree = "<group>"; };
+		DC5EE7AB1F32B53100E8B540 /* UIView+CoineyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CoineyAdditions.h"; sourceTree = "<group>"; };
+		DC5EE7AC1F32B53100E8B540 /* UIView+CoineyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CoineyAdditions.m"; sourceTree = "<group>"; };
 		DC7AEE0A1F2F3876009BA72E /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7AEE0D1F2F3876009BA72E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC7AEE0F1F2F3877009BA72E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -133,8 +142,14 @@
 		DC7AEE3E1F2F39C1009BA72E /* Card Entry View */ = {
 			isa = PBXGroup;
 			children = (
+				DC5EE7A71F32B2BF00E8B540 /* CYCardBrandFunctions.h */,
+				DC5EE7A51F32B2B000E8B540 /* CYCardBrandFunctions.m */,
 				DC7AEE431F2F3A30009BA72E /* CYCardEntryView.h */,
 				DC7AEE441F2F3A30009BA72E /* CYCardEntryView.m */,
+				DC5EE7A81F32B47000E8B540 /* NSString+CoineyAdditions.h */,
+				DC5EE7A91F32B47000E8B540 /* NSString+CoineyAdditions.m */,
+				DC5EE7AB1F32B53100E8B540 /* UIView+CoineyAdditions.h */,
+				DC5EE7AC1F32B53100E8B540 /* UIView+CoineyAdditions.m */,
 				DC7AEE3F1F2F39D4009BA72E /* SampleApp-Bridging-Header.h */,
 			);
 			name = "Card Entry View";
@@ -276,8 +291,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC7AEE101F2F3877009BA72E /* ViewController.swift in Sources */,
+				DC5EE7AA1F32B47000E8B540 /* NSString+CoineyAdditions.m in Sources */,
 				DC7AEE0E1F2F3876009BA72E /* AppDelegate.swift in Sources */,
 				DC7AEE451F2F3A31009BA72E /* CYCardEntryView.m in Sources */,
+				DC5EE7A61F32B2B000E8B540 /* CYCardBrandFunctions.m in Sources */,
+				DC5EE7AD1F32B53100E8B540 /* UIView+CoineyAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
