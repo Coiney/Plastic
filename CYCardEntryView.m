@@ -404,10 +404,11 @@ shouldChangeCharactersInRange:(NSRange)aRange
         _numberField.cardNumber = newValue;
         _cvcField.enabled       = self.cardBrand != CYUnknownCardBrand;
         [self updateIcon];
-        if(_numberField.textIsValidCardNumber)
+        if (_numberField.textIsValidCardNumber) {
             self.numberCollapsed = YES;
-        else
+        } else {
             self.numberCollapsed = NO;
+        }
     }
     
     else if (aField == _expiryField) {
@@ -451,7 +452,7 @@ shouldChangeCharactersInRange:(NSRange)aRange
     if (_cvcField.text.length > 0) {
         return [_cvcField becomeFirstResponder];
     }
-    else if(_expiryField.text.length > 0) {
+    else if (_expiryField.text.length > 0) {
         return [_expiryField becomeFirstResponder];
     }
     else {
@@ -569,20 +570,21 @@ shouldChangeCharactersInRange:(NSRange)aRange
 
 - (void)setNumberCollapsed:(BOOL)aFlag
 {
-    if(_numberCollapsed == aFlag)
+    if (_numberCollapsed == aFlag) {
         return;
-
+    }
     _numberCollapsed = aFlag;
     [self layoutSubviewsAnimated:YES];
-    if(_numberCollapsed)
+    if (_numberCollapsed) {
         [_expiryField becomeFirstResponder];
-    else
+    } else {
         [_numberField becomeFirstResponder];
+    }
 }
 
 - (void)setUsesSystemKeyboard:(BOOL)aFlag
 {
-    if(aFlag) {
+    if (aFlag) {
         _numberField.inputView = nil;
         _expiryField.inputView = nil;
         _cvcField.inputView    = nil;
@@ -602,13 +604,15 @@ shouldChangeCharactersInRange:(NSRange)aRange
     if (aField == _expiryField && aField.text.length == 0) {
         self.numberCollapsed = NO;
         [_numberField becomeFirstResponder];
-        if([_numberField.cardNumber length] > 0)
+        if ([_numberField.cardNumber length] > 0) {
             _numberField.cardNumber = [_numberField.cardNumber substringToIndex:[_numberField.cardNumber length]-1];
+        }
     }
     else if (aField == _cvcField && aField.text.length == 0) {
         [_expiryField becomeFirstResponder];
-        if([_expiryField.text length] > 0)
+        if ([_expiryField.text length] > 0) {
             _expiryField.text = [_expiryField.text substringToIndex:[_expiryField.text length]-1];
+        }
     }
 }
 
@@ -765,7 +769,7 @@ CYCardBrand _CYCardBrandFromNumber(NSString * const aCardNumber)
         return CYUnknownCardBrand;
     } else if ([aCardNumber hasPrefix:@"4"]) {
         return CYVisa;
-    } else if([aCardNumber length] < 2) {
+    } else if ([aCardNumber length] < 2) {
         return CYUnknownCardBrand;
     }
     
