@@ -20,6 +20,7 @@
 
 @property(nonatomic, strong) NSString *cardNumberPlaceholder, *expiryPlaceholder, *cvcPlaceholder;
 @property(nonatomic, assign) BOOL collapsesCardNumberField;
+@property(nonatomic, weak) UILabel *hintLabel;
 
 @property(nonatomic, weak) id<CYCardEntryViewDelegate> delegate;
 

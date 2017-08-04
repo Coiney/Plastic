@@ -34,7 +34,6 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
     CYCardExpiryField *_expiryField;
     CYCardCVCField    *_cvcField;
 }
-@property(nonatomic, weak) IBOutlet UILabel *hintLabel;
 @property(nonatomic, assign) BOOL numberCollapsed;
 
 - (void)_deleteKeyPressedInField:(UITextField *)aField;
@@ -104,7 +103,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 {
     [super becomeFirstResponder];
     [self.cardEntryView updateIcon];
-    //[self.cardEntryView updateHintLabel];
+    [self.cardEntryView updateHintLabel];
     return YES;
 }
 
@@ -201,7 +200,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 {
     [super becomeFirstResponder];
     [self.cardEntryView updateIcon];
-    //[self.cardEntryView updateHintLabel];
+    [self.cardEntryView updateHintLabel];
     return YES;
 }
 
@@ -249,7 +248,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 {
     [super becomeFirstResponder];
     [self.cardEntryView updateIcon];
-    //[self.cardEntryView updateHintLabel];
+    [self.cardEntryView updateHintLabel];
     return YES;
 }
 
@@ -259,7 +258,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 - (void)_init
 {
-    //_brandIconView = [[UIImageView alloc] initWithImage:[UIImage cy_imageForCardBrand:CYUnknownCardBrand]];
+    _brandIconView = [[UIImageView alloc] initWithImage:_CYImageForCardBrand(CYUnknownCardBrand)];
     _brandIconView.backgroundColor = [UIColor clearColor];
     _brandIconView.contentMode     = UIViewContentModeCenter;
     [self addSubview:_brandIconView];
@@ -325,14 +324,14 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
         _numberField.frame = (CGRect) { 3, 2, 200, 24 };
         _expiryField.frame = (CGRect) { 205, 2, 75, 24 };
         _cvcField.frame    = (CGRect) { 280, 2, 60, 24 };
-        _cvcField.placeholder = @"CVC";
+        //_cvcField.placeholder = @"CVC";
     } else if (_numberCollapsed) {
         [UIView animateWithDuration:(aAnimated ? 0.3 : 0) animations:^{
             _numberField.frame = (CGRect) { -144, 2, 200, 24 };
             _expiryField.frame = (CGRect) { 63, 2, 75, 24 };
             _cvcField.frame    = (CGRect) { 144, 2, 60, 24 };
         }];
-        _cvcField.placeholder = @"CVC";
+        //_cvcField.placeholder = @"CVC";
     } else {
         [UIView animateWithDuration:(aAnimated ? 0.3 : 0) animations:^{
             _numberField.frame = (CGRect) { 5, 2, 200, 24 };
@@ -659,8 +658,8 @@ shouldChangeCharactersInRange:(NSRange)aRange
         _hintLabel.text = @"Enter four-digit expiration";
     } else {
         _hintLabel.text = self.cardBrand == CYAmericanExpress
-                          ? @"Enter four-digit security code on\nfront of card"
-                          : @"Enter three-digit security code on\nback of card";
+                          ? @"Enter four-digit security code on front of card"
+                          : @"Enter three-digit security code on back of card";
     }
 }
 

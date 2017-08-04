@@ -23,21 +23,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TrA-cj-bwY" customClass="CYCardEntryView">
-                                <rect key="frame" x="36" y="313.5" width="303" height="40"/>
+                                <rect key="frame" x="36" y="309.5" width="303" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Tqx-0j-lbv"/>
+                                    <constraint firstAttribute="height" constant="48" id="Tqx-0j-lbv"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYS-hy-oq7">
+                                <rect key="frame" x="36" y="369.5" width="303" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wYS-hy-oq7" firstAttribute="top" secondItem="TrA-cj-bwY" secondAttribute="bottom" constant="12" id="4CS-Uz-HYr"/>
                             <constraint firstItem="TrA-cj-bwY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="947-Iq-roq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TrA-cj-bwY" secondAttribute="trailing" constant="20" id="Jm1-Vk-wak"/>
                             <constraint firstItem="TrA-cj-bwY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="REf-r3-4N1"/>
+                            <constraint firstItem="wYS-hy-oq7" firstAttribute="centerX" secondItem="TrA-cj-bwY" secondAttribute="centerX" id="iz6-02-cc4"/>
+                            <constraint firstItem="wYS-hy-oq7" firstAttribute="width" secondItem="TrA-cj-bwY" secondAttribute="width" id="yBX-dj-sRI"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cardEntryView" destination="TrA-cj-bwY" id="6gi-Em-gua"/>
+                        <outlet property="hintLabel" destination="wYS-hy-oq7" id="Lbq-0H-INO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
