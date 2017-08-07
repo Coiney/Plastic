@@ -10,7 +10,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 @interface CYCardNumberField : UITextField
 @property(nonatomic, readonly) CYCardEntryView *cardEntryView;
-@property(nonatomic) NSString *cardNumber;
+@property(nonatomic, readonly) NSString *cardNumber;
 @property(nonatomic, readonly) NSUInteger maxLength;
 @property(nonatomic, readonly) CYCardBrand cardBrand;
 @property(nonatomic, readonly) BOOL textIsValidCardNumber;
@@ -28,11 +28,11 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 @interface CYCardEntryView () <UITextFieldDelegate> {
     UIImageView *_brandIconView;
-    UIView      *_clipView;
+    UIView *_clipView;
     
     CYCardNumberField *_numberField;
     CYCardExpiryField *_expiryField;
-    CYCardCVCField    *_cvcField;
+    CYCardCVCField *_cvcField;
 }
 @property(nonatomic, assign) BOOL numberCollapsed;
 
@@ -107,6 +107,18 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
     return YES;
 }
 
+- (CGRect)textRectForBounds:(CGRect)bounds
+{
+    UIEdgeInsets const edgeInsets = (UIEdgeInsets) { 0, -6, 0, 0 };
+    return [super textRectForBounds:UIEdgeInsetsInsetRect(bounds, edgeInsets)];
+}
+
+- (CGRect)editingRectForBounds:(CGRect)bounds
+{
+    UIEdgeInsets const edgeInsets = (UIEdgeInsets) { 0, -6, 0, 0 };
+    return [super editingRectForBounds:UIEdgeInsetsInsetRect(bounds, edgeInsets)];
+}
+
 @end
 
 @implementation CYCardExpiryField
@@ -176,7 +188,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
                         || (self.text.length == 5 && self.textIsValidExpiry);
     
     self.textColor = partiallyValid
-                     ? [UIColor blackColor]
+                     ? [UIColor darkGrayColor]
                      : [UIColor redColor];
 }
 
@@ -212,7 +224,8 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 {
     if ((self = [super init])) {
         self.keyboardType = UIKeyboardTypeNumberPad;
-        self.enabled      = NO;
+        self.enabled = NO;
+        self.textColor = [UIColor darkGrayColor];
     }
     return self;
 }
@@ -259,25 +272,57 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 - (void)_init
 {
     _brandIconView = [[UIImageView alloc] initWithImage:_CYImageForCardBrand(CYUnknownCardBrand)];
-    _brandIconView.backgroundColor = [UIColor clearColor];
-    _brandIconView.contentMode     = UIViewContentModeCenter;
+    _brandIconView.contentMode = UIViewContentModeCenter;
+    _brandIconView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:_brandIconView];
     
     _clipView = [UIView new];
     _clipView.clipsToBounds = YES;
+    _clipView.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:_clipView];
     
     _numberField = [CYCardNumberField new];
     _numberField.delegate = self;
+    _numberField.translatesAutoresizingMaskIntoConstraints = NO;
     [_clipView addSubview:_numberField];
     
     _expiryField = [CYCardExpiryField new];
     _expiryField.delegate = self;
+    _expiryField.translatesAutoresizingMaskIntoConstraints = NO;
     [_clipView addSubview:_expiryField];
     
     _cvcField = [CYCardCVCField new];
     _cvcField.delegate = self;
+    _cvcField.translatesAutoresizingMaskIntoConstraints = NO;
     [_clipView addSubview:_cvcField];
+    
+    NSDictionary * const views = @{
+        @"brandIconView": _brandIconView,
+        @"numberField": _numberField,
+        @"expiryField": _expiryField,
+        @"cvcField": _cvcField,
+        @"clipView": _clipView
+    };
+    [_clipView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[numberField(192)]-(4)-[expiryField(68)]-(4)-[cvcField(48)]-|" options:0 metrics:nil views:views]];
+    [_clipView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[numberField]-|" options:0 metrics:nil views:views]];
+    [_clipView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[expiryField]-|" options:0 metrics:nil views:views]];
+    [_clipView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[cvcField]-|" options:0 metrics:nil views:views]];
+    
+    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(12)-[brandIconView]-(8)-[clipView]" options:0 metrics:nil views:views]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_brandIconView
+                                                     attribute:NSLayoutAttributeCenterY
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeCenterY
+                                                    multiplier:1
+                                                      constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_clipView
+                                                     attribute:NSLayoutAttributeCenterY
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeCenterY
+                                                    multiplier:1
+                                                      constant:0]];
 }
 
 - (instancetype)initWithFrame:(CGRect)aFrame
@@ -317,27 +362,19 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 - (void)layoutSubviewsAnimated:(BOOL)aAnimated
 {
-    _brandIconView.frame = (CGRect) { 12, 0, 35, self.bounds.size.height };
-    _clipView.frame = (CGRect) { 55, (self.bounds.size.height - 28) / 2, self.bounds.size.width - 70, 28 };
-    
-    if (!_collapsesCardNumberField) {
-        _numberField.frame = (CGRect) { 3, 2, 200, 24 };
-        _expiryField.frame = (CGRect) { 205, 2, 75, 24 };
-        _cvcField.frame    = (CGRect) { 280, 2, 60, 24 };
-        //_cvcField.placeholder = @"CVC";
-    } else if (_numberCollapsed) {
-        [UIView animateWithDuration:(aAnimated ? 0.3 : 0) animations:^{
-            _numberField.frame = (CGRect) { -144, 2, 200, 24 };
-            _expiryField.frame = (CGRect) { 63, 2, 75, 24 };
-            _cvcField.frame    = (CGRect) { 144, 2, 60, 24 };
-        }];
-        //_cvcField.placeholder = @"CVC";
-    } else {
-        [UIView animateWithDuration:(aAnimated ? 0.3 : 0) animations:^{
-            _numberField.frame = (CGRect) { 5, 2, 200, 24 };
-            _expiryField.frame = (CGRect) { 216, 2, 75, 24 };
-            _cvcField.frame    = (CGRect) { 297, 2, 60, 24 };
-        }];
+    if (_collapsesCardNumberField) {
+        CGAffineTransform const moveLeft =
+            CGAffineTransformMakeTranslation(
+                self.bounds.size.width - _clipView.bounds.size.width - _clipView.frame.origin.x, 0
+            );
+        CGAffineTransform const transform = _numberCollapsed ? moveLeft : CGAffineTransformIdentity;
+        
+        [UIView animateWithDuration:(aAnimated ? 0.3 : 0)
+                         animations:^{
+                             _numberField.transform = transform;
+                             _expiryField.transform = transform;
+                             _cvcField.transform = transform;
+                         }];
     }
 }
 
