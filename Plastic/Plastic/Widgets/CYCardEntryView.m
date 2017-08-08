@@ -39,7 +39,6 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 - (void)_deleteKeyPressedInField:(UITextField *)aField;
 - (void)updateIcon;
-- (void)updateHintLabel;
 @end
 
 @implementation CYCardNumberField
@@ -690,14 +689,16 @@ shouldChangeCharactersInRange:(NSRange)aRange
 
 - (void)updateHintLabel
 {
-    if ([self cy_findFirstResponder] == _numberField) {
-        _hintLabel.text = @"Enter card number";
-    } else if ([self cy_findFirstResponder] == _expiryField) {
-        _hintLabel.text = @"Enter four-digit expiration";
-    } else {
+    if ([self cy_findFirstResponder] == _cvcField) {
         _hintLabel.text = self.cardBrand == CYAmericanExpress
-                          ? @"Enter four-digit security code on front of card"
-                          : @"Enter three-digit security code on back of card";
+                          ? @"Enter 4-digit security code on front of card"
+                          : @"Enter 3-digit security code on back of card";
+    }
+    else if ([self cy_findFirstResponder] == _expiryField) {
+        _hintLabel.text = @"Enter 4-digit expiration";
+    }
+    else {
+        _hintLabel.text = @"Enter card number";
     }
 }
 

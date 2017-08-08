@@ -30,4 +30,6 @@
 - (void)backspace;
 - (void)clear;
 
+- (void)updateHintLabel;
+
 @end

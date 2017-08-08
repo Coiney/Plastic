@@ -26,6 +26,7 @@ class ViewController: UIViewController, CYCardEntryViewDelegate, CYKeypadDelegat
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         cardEntryView?.collapsesCardNumberField = true;
         cardEntryView?.hintLabel = hintLabel
+        cardEntryView?.updateHintLabel()
         cardEntryView?.setUsesSystemKeyboard(false)
         cardEntryView?.delegate = self
         brandListView?.brandMask = CYCardBrandMask.all
