@@ -7,16 +7,17 @@
 //
 
 import UIKit
+import Plastic
 
 class ViewController: UIViewController {
     
     @IBOutlet var cardEntryView: CYCardEntryView?
     @IBOutlet var hintLabel: UILabel?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cardEntryView?.collapsesCardNumberField = true;
         cardEntryView?.hintLabel = hintLabel
     }
-
+    
 }

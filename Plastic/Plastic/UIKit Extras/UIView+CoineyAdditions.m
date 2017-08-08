@@ -4,7 +4,7 @@
 
 #import "UIView+CoineyAdditions.h"
 
-@implementation UIView (CYCardEntryAdditions)
+@implementation UIView (CoineyAdditions)
 
 - (BOOL)cy_enumerateSubviews:(void (^)(UIView *aView, BOOL *aoShouldStop))aBlock
                  recursively:(BOOL const)aRecursive
