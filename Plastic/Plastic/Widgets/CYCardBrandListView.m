@@ -8,6 +8,7 @@ static NSArray *_BrandNames;
 @interface CYCardBrandListView () {
     NSMutableDictionary *_iconViews;
     NSMutableArray *_constraints;
+    UIView *_containerView;
 }
 - (void)_updateLayoutConstraints;
 @end
@@ -23,6 +24,25 @@ static NSArray *_BrandNames;
 {
     _brandMask = ~0;
     _iconViews = [[NSMutableDictionary alloc] initWithCapacity:[_BrandNames count]];
+    
+    _containerView = [UIView new];
+    _containerView.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [self addSubview:_containerView];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_containerView
+                                                     attribute:NSLayoutAttributeCenterX
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeCenterX
+                                                    multiplier:1
+                                                      constant:0]];
+    [self addConstraint:[NSLayoutConstraint constraintWithItem:_containerView
+                                                     attribute:NSLayoutAttributeCenterY
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:self
+                                                     attribute:NSLayoutAttributeCenterY
+                                                    multiplier:1
+                                                      constant:0]];
 
     for (NSString *brandName in _BrandNames) {
         UIImageView * const view = [UIImageView new];
@@ -31,7 +51,7 @@ static NSArray *_BrandNames;
         view.clipsToBounds = YES;
         view.translatesAutoresizingMaskIntoConstraints = NO;
         _iconViews[brandName] = view;
-        [self addSubview:view];
+        [_containerView addSubview:view];
     }
 }
 
@@ -74,7 +94,7 @@ static NSArray *_BrandNames;
 - (void)_updateLayoutConstraints
 {
     if (_constraints) {
-        [self removeConstraints:_constraints];
+        [_containerView removeConstraints:_constraints];
     }
     _constraints = [NSMutableArray new];
 
@@ -90,7 +110,7 @@ static NSArray *_BrandNames;
             hidden ? 0l : (long)(imageView.image.size.width + kHorizontalSpacing)];
         
         [_constraints addObjectsFromArray:[NSLayoutConstraint
-            constraintsWithVisualFormat:[NSString stringWithFormat:@"V:|-0-[%@(24)]-0-|", brandName]
+            constraintsWithVisualFormat:[NSString stringWithFormat:@"V:|-0-[%@(%li)]-0-|", brandName, (long)imageView.image.size.height]
                                 options:0
                                 metrics:nil
                                   views:_iconViews]];
@@ -103,7 +123,7 @@ static NSArray *_BrandNames;
                             metrics:nil
                               views:_iconViews]];
 
-    [self addConstraints:_constraints];
-    [self layoutIfNeeded];
+    [_containerView addConstraints:_constraints];
+    [_containerView layoutIfNeeded];
 }
 @end
