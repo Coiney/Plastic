@@ -6,14 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CardEntrySample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,31 +21,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uke-b5-k9s" customClass="CYCardEntryView">
-                                <rect key="frame" x="36" y="309" width="303" height="48"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Uke-b5-k9s" customClass="CYCardEntryView">
+                                <rect key="frame" x="40" y="309" width="295" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="bdw-FK-Cfy"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXR-Hm-Rwx">
-                                <rect key="frame" x="36" y="369" width="303" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PXR-Hm-Rwx">
+                                <rect key="frame" x="40" y="369" width="295" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="mdq-SS-KN5" customClass="CYCardBrandListView">
+                                <rect key="frame" x="43.5" y="40" width="288" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="288" id="TXC-yH-CkD"/>
+                                    <constraint firstAttribute="height" constant="24" id="yBk-i8-TTA"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PXR-Hm-Rwx" firstAttribute="top" secondItem="Uke-b5-k9s" secondAttribute="bottom" constant="12" id="90q-Bc-ixI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Uke-b5-k9s" secondAttribute="trailing" constant="20" id="FaI-on-Bsa"/>
+                            <constraint firstAttribute="trailing" secondItem="Uke-b5-k9s" secondAttribute="trailing" constant="40" id="FaI-on-Bsa"/>
+                            <constraint firstItem="mdq-SS-KN5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LFX-oM-n0A"/>
+                            <constraint firstItem="mdq-SS-KN5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Wt9-FN-ezB"/>
                             <constraint firstItem="PXR-Hm-Rwx" firstAttribute="width" secondItem="Uke-b5-k9s" secondAttribute="width" id="eD4-GX-dQU"/>
                             <constraint firstItem="PXR-Hm-Rwx" firstAttribute="centerX" secondItem="Uke-b5-k9s" secondAttribute="centerX" id="h1D-ps-w20"/>
-                            <constraint firstItem="Uke-b5-k9s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="lBS-gA-4wW"/>
+                            <constraint firstItem="Uke-b5-k9s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="lBS-gA-4wW"/>
                             <constraint firstItem="Uke-b5-k9s" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nS2-Jk-3yZ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="brandListView" destination="mdq-SS-KN5" id="scB-xf-knX"/>
                         <outlet property="cardEntryView" destination="Uke-b5-k9s" id="7fT-MW-WOw"/>
                         <outlet property="hintLabel" destination="PXR-Hm-Rwx" id="SQv-tb-6Bp"/>
                     </connections>

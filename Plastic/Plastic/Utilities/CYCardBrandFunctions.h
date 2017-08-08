@@ -22,9 +22,20 @@ typedef NS_ENUM(NSInteger, CYCardBrand) {
     CYDiscover
 };
 
+typedef NS_OPTIONS(int64_t, CYCardBrandMask) {
+    CYCardBrandMaskMasterCard      = 1 << CYMasterCard,
+    CYCardBrandMaskVisa            = 1 << CYVisa,
+    CYCardBrandMaskAmericanExpress = 1 << CYAmericanExpress,
+    CYCardBrandMaskJCB             = 1 << CYJCB,
+    CYCardBrandMaskDiners          = 1 << CYDiners,
+    CYCardBrandMaskDiscover        = 1 << CYDiscover,
+    CYCardBrandMaskAll             = ~0
+};
+
 CYCardBrand CYCardBrandFromNumber(NSString * aCardNumber);
 NSUInteger NumberOfDigitsForCardBrand(CYCardBrand aCardBrand);
 NSUInteger CVCLengthForCardBrand(CYCardBrand aCardBrand);
 NSString * NSStringFromCardBrand(CYCardBrand aCardBrand);
+CYCardBrand CYCardBrandFromString(NSString * aBrandName);
 BOOL LuhnCheck(NSString * aCardNumber);
 NSString * CYFormatCardNumber(NSString * aCardNumber);

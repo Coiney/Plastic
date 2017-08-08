@@ -12,4 +12,5 @@ FOUNDATION_EXPORT const unsigned char PlasticVersionString[];
 
 #import <Plastic/CYCardBrandFunctions.h>
 
+#import <Plastic/CYCardBrandListView.h>
 #import <Plastic/CYCardEntryView.h>

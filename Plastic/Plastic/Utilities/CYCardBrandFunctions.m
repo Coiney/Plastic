@@ -70,6 +70,25 @@ NSString * NSStringFromCardBrand(CYCardBrand const aCardBrand)
     }
 }
 
+CYCardBrand CYCardBrandFromString(NSString * const aBrandName)
+{
+    if ([aBrandName isEqualToString:@"Visa"]) {
+        return CYVisa;
+    } else if ([aBrandName isEqualToString:@"MasterCard"]) {
+        return CYMasterCard;
+    } else if ([aBrandName isEqualToString:@"Amex"]) {
+        return CYAmericanExpress;
+    } else if ([aBrandName isEqualToString:@"JCB"]) {
+        return CYJCB;
+    } else if ([aBrandName isEqualToString:@"Diners"]) {
+        return CYDiners;
+    } else if ([aBrandName isEqualToString:@"Discover"]) {
+        return CYDiscover;
+    } else {
+        return CYUnknownCardBrand;
+    }
+}
+
 BOOL LuhnCheck(NSString * const aCardNumber)
 {
     NSCParameterAssert([aCardNumber cy_isNumeric]);

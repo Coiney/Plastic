@@ -10,24 +10,26 @@
 		DCC1B4681F387AF0004011E3 /* Plastic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1B45E1F387AF0004011E3 /* Plastic.framework */; };
 		DCC1B46D1F387AF0004011E3 /* PlasticTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1B46C1F387AF0004011E3 /* PlasticTests.m */; };
 		DCC1B46F1F387AF0004011E3 /* Plastic.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1B4611F387AF0004011E3 /* Plastic.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DCC1B47B1F387B8A004011E3 /* CYCardEntryView.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1B4791F387B8A004011E3 /* CYCardEntryView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DCC1B47C1F387B8A004011E3 /* CYCardEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1B47A1F387B8A004011E3 /* CYCardEntryView.m */; };
 		DCC1B4801F387B91004011E3 /* NSString+CoineyAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1B47E1F387B91004011E3 /* NSString+CoineyAdditions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		DCC1B4811F387B91004011E3 /* NSString+CoineyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1B47F1F387B91004011E3 /* NSString+CoineyAdditions.m */; };
 		DCC1B4851F387B98004011E3 /* UIView+CoineyAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1B4831F387B98004011E3 /* UIView+CoineyAdditions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		DCC1B4861F387B98004011E3 /* UIView+CoineyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1B4841F387B98004011E3 /* UIView+CoineyAdditions.m */; };
 		DCC1B48A1F387BA0004011E3 /* CYCardBrandFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1B4881F387BA0004011E3 /* CYCardBrandFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCC1B48B1F387BA0004011E3 /* CYCardBrandFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1B4891F387BA0004011E3 /* CYCardBrandFunctions.m */; };
-		DCC1B4931F387BE1004011E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1B4921F387BE1004011E3 /* AppDelegate.swift */; };
-		DCC1B4951F387BE1004011E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC1B4941F387BE1004011E3 /* ViewController.swift */; };
-		DCC1B4981F387BE1004011E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC1B4961F387BE1004011E3 /* Main.storyboard */; };
-		DCC1B49A1F387BE1004011E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC1B4991F387BE1004011E3 /* Assets.xcassets */; };
-		DCC1B49D1F387BE1004011E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC1B49B1F387BE1004011E3 /* LaunchScreen.storyboard */; };
-		DCC1B4A21F387C04004011E3 /* Plastic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1B45E1F387AF0004011E3 /* Plastic.framework */; };
-		DCC1B4A31F387C04004011E3 /* Plastic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1B45E1F387AF0004011E3 /* Plastic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCC1B4A81F3983DE004011E3 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC1B4A71F3983DE004011E3 /* Icons.xcassets */; };
-		DCC1B4AB1F3984C8004011E3 /* UIImage+CoineyAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1B4A91F3984C8004011E3 /* UIImage+CoineyAdditions.h */; };
+		DCC1B4AB1F3984C8004011E3 /* UIImage+CoineyAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1B4A91F3984C8004011E3 /* UIImage+CoineyAdditions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		DCC1B4AC1F3984C8004011E3 /* UIImage+CoineyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1B4AA1F3984C8004011E3 /* UIImage+CoineyAdditions.m */; };
+		DCD40D421F39A60D00A4168E /* CYCardBrandListView.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD40D3E1F39A60D00A4168E /* CYCardBrandListView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCD40D431F39A60D00A4168E /* CYCardBrandListView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD40D3F1F39A60D00A4168E /* CYCardBrandListView.m */; };
+		DCD40D441F39A60D00A4168E /* CYCardEntryView.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD40D401F39A60D00A4168E /* CYCardEntryView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCD40D451F39A60D00A4168E /* CYCardEntryView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD40D411F39A60D00A4168E /* CYCardEntryView.m */; };
+		DCD40D501F39AC0100A4168E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD40D4F1F39AC0100A4168E /* AppDelegate.swift */; };
+		DCD40D521F39AC0100A4168E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCD40D511F39AC0100A4168E /* ViewController.swift */; };
+		DCD40D551F39AC0100A4168E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD40D531F39AC0100A4168E /* Main.storyboard */; };
+		DCD40D571F39AC0100A4168E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCD40D561F39AC0100A4168E /* Assets.xcassets */; };
+		DCD40D5A1F39AC0100A4168E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCD40D581F39AC0100A4168E /* LaunchScreen.storyboard */; };
+		DCD40D5F1F39B02200A4168E /* Plastic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1B45E1F387AF0004011E3 /* Plastic.framework */; };
+		DCD40D601F39B02200A4168E /* Plastic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1B45E1F387AF0004011E3 /* Plastic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +40,7 @@
 			remoteGlobalIDString = DCC1B45D1F387AF0004011E3;
 			remoteInfo = Plastic;
 		};
-		DCC1B4A41F387C04004011E3 /* PBXContainerItemProxy */ = {
+		DCD40D611F39B02200A4168E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCC1B4551F387AF0004011E3 /* Project object */;
 			proxyType = 1;
@@ -48,13 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		DCC1B4A61F387C04004011E3 /* Embed Frameworks */ = {
+		DCD40D631F39B02200A4168E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DCC1B4A31F387C04004011E3 /* Plastic.framework in Embed Frameworks */,
+				DCD40D601F39B02200A4168E /* Plastic.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,24 +70,26 @@
 		DCC1B4671F387AF0004011E3 /* PlasticTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlasticTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC1B46C1F387AF0004011E3 /* PlasticTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlasticTests.m; sourceTree = "<group>"; };
 		DCC1B46E1F387AF0004011E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCC1B4791F387B8A004011E3 /* CYCardEntryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCardEntryView.h; sourceTree = "<group>"; };
-		DCC1B47A1F387B8A004011E3 /* CYCardEntryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCardEntryView.m; sourceTree = "<group>"; };
 		DCC1B47E1F387B91004011E3 /* NSString+CoineyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CoineyAdditions.h"; sourceTree = "<group>"; };
 		DCC1B47F1F387B91004011E3 /* NSString+CoineyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CoineyAdditions.m"; sourceTree = "<group>"; };
 		DCC1B4831F387B98004011E3 /* UIView+CoineyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CoineyAdditions.h"; sourceTree = "<group>"; };
 		DCC1B4841F387B98004011E3 /* UIView+CoineyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CoineyAdditions.m"; sourceTree = "<group>"; };
 		DCC1B4881F387BA0004011E3 /* CYCardBrandFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCardBrandFunctions.h; sourceTree = "<group>"; };
 		DCC1B4891F387BA0004011E3 /* CYCardBrandFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCardBrandFunctions.m; sourceTree = "<group>"; };
-		DCC1B4901F387BE0004011E3 /* CardEntrySample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardEntrySample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCC1B4921F387BE1004011E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCC1B4941F387BE1004011E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DCC1B4971F387BE1004011E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DCC1B4991F387BE1004011E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DCC1B49C1F387BE1004011E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DCC1B49E1F387BE1004011E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC1B4A71F3983DE004011E3 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		DCC1B4A91F3984C8004011E3 /* UIImage+CoineyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CoineyAdditions.h"; sourceTree = "<group>"; };
 		DCC1B4AA1F3984C8004011E3 /* UIImage+CoineyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CoineyAdditions.m"; sourceTree = "<group>"; };
+		DCD40D3E1F39A60D00A4168E /* CYCardBrandListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCardBrandListView.h; sourceTree = "<group>"; };
+		DCD40D3F1F39A60D00A4168E /* CYCardBrandListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCardBrandListView.m; sourceTree = "<group>"; };
+		DCD40D401F39A60D00A4168E /* CYCardEntryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCardEntryView.h; sourceTree = "<group>"; };
+		DCD40D411F39A60D00A4168E /* CYCardEntryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCardEntryView.m; sourceTree = "<group>"; };
+		DCD40D4D1F39AC0100A4168E /* SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCD40D4F1F39AC0100A4168E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DCD40D511F39AC0100A4168E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DCD40D541F39AC0100A4168E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DCD40D561F39AC0100A4168E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCD40D591F39AC0100A4168E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DCD40D5B1F39AC0100A4168E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +108,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCC1B48D1F387BE0004011E3 /* Frameworks */ = {
+		DCD40D4A1F39AC0100A4168E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC1B4A21F387C04004011E3 /* Plastic.framework in Frameworks */,
+				DCD40D5F1F39B02200A4168E /* Plastic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +124,7 @@
 			children = (
 				DCC1B4601F387AF0004011E3 /* Plastic */,
 				DCC1B46B1F387AF0004011E3 /* PlasticTests */,
-				DCC1B4911F387BE1004011E3 /* CardEntrySample */,
+				DCD40D4E1F39AC0100A4168E /* SampleApp */,
 				DCC1B45F1F387AF0004011E3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,7 +134,7 @@
 			children = (
 				DCC1B45E1F387AF0004011E3 /* Plastic.framework */,
 				DCC1B4671F387AF0004011E3 /* PlasticTests.xctest */,
-				DCC1B4901F387BE0004011E3 /* CardEntrySample.app */,
+				DCD40D4D1F39AC0100A4168E /* SampleApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,10 +142,10 @@
 		DCC1B4601F387AF0004011E3 /* Plastic */ = {
 			isa = PBXGroup;
 			children = (
-				DCC1B4781F387B8A004011E3 /* Card Entry View */,
 				DCC1B47D1F387B91004011E3 /* Foundation Extras */,
 				DCC1B4821F387B98004011E3 /* UIKit Extras */,
 				DCC1B4871F387BA0004011E3 /* Utilities */,
+				DCD40D3D1F39A60D00A4168E /* Widgets */,
 				DCC1B4611F387AF0004011E3 /* Plastic.h */,
 				DCC1B4A71F3983DE004011E3 /* Icons.xcassets */,
 				DCC1B4621F387AF0004011E3 /* Info.plist */,
@@ -156,15 +160,6 @@
 				DCC1B46E1F387AF0004011E3 /* Info.plist */,
 			);
 			path = PlasticTests;
-			sourceTree = "<group>";
-		};
-		DCC1B4781F387B8A004011E3 /* Card Entry View */ = {
-			isa = PBXGroup;
-			children = (
-				DCC1B4791F387B8A004011E3 /* CYCardEntryView.h */,
-				DCC1B47A1F387B8A004011E3 /* CYCardEntryView.m */,
-			);
-			path = "Card Entry View";
 			sourceTree = "<group>";
 		};
 		DCC1B47D1F387B91004011E3 /* Foundation Extras */ = {
@@ -196,17 +191,28 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		DCC1B4911F387BE1004011E3 /* CardEntrySample */ = {
+		DCD40D3D1F39A60D00A4168E /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
-				DCC1B4921F387BE1004011E3 /* AppDelegate.swift */,
-				DCC1B4941F387BE1004011E3 /* ViewController.swift */,
-				DCC1B4961F387BE1004011E3 /* Main.storyboard */,
-				DCC1B4991F387BE1004011E3 /* Assets.xcassets */,
-				DCC1B49B1F387BE1004011E3 /* LaunchScreen.storyboard */,
-				DCC1B49E1F387BE1004011E3 /* Info.plist */,
+				DCD40D3E1F39A60D00A4168E /* CYCardBrandListView.h */,
+				DCD40D3F1F39A60D00A4168E /* CYCardBrandListView.m */,
+				DCD40D401F39A60D00A4168E /* CYCardEntryView.h */,
+				DCD40D411F39A60D00A4168E /* CYCardEntryView.m */,
 			);
-			path = CardEntrySample;
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		DCD40D4E1F39AC0100A4168E /* SampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				DCD40D4F1F39AC0100A4168E /* AppDelegate.swift */,
+				DCD40D511F39AC0100A4168E /* ViewController.swift */,
+				DCD40D531F39AC0100A4168E /* Main.storyboard */,
+				DCD40D561F39AC0100A4168E /* Assets.xcassets */,
+				DCD40D581F39AC0100A4168E /* LaunchScreen.storyboard */,
+				DCD40D5B1F39AC0100A4168E /* Info.plist */,
+			);
+			path = SampleApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,12 +222,13 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC1B4851F387B98004011E3 /* UIView+CoineyAdditions.h in Headers */,
 				DCC1B48A1F387BA0004011E3 /* CYCardBrandFunctions.h in Headers */,
-				DCC1B47B1F387B8A004011E3 /* CYCardEntryView.h in Headers */,
-				DCC1B4AB1F3984C8004011E3 /* UIImage+CoineyAdditions.h in Headers */,
+				DCD40D421F39A60D00A4168E /* CYCardBrandListView.h in Headers */,
+				DCD40D441F39A60D00A4168E /* CYCardEntryView.h in Headers */,
 				DCC1B4801F387B91004011E3 /* NSString+CoineyAdditions.h in Headers */,
+				DCC1B4AB1F3984C8004011E3 /* UIImage+CoineyAdditions.h in Headers */,
 				DCC1B46F1F387AF0004011E3 /* Plastic.h in Headers */,
+				DCC1B4851F387B98004011E3 /* UIView+CoineyAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,23 +271,23 @@
 			productReference = DCC1B4671F387AF0004011E3 /* PlasticTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DCC1B48F1F387BE0004011E3 /* CardEntrySample */ = {
+		DCD40D4C1F39AC0100A4168E /* SampleApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DCC1B49F1F387BE1004011E3 /* Build configuration list for PBXNativeTarget "CardEntrySample" */;
+			buildConfigurationList = DCD40D5C1F39AC0100A4168E /* Build configuration list for PBXNativeTarget "SampleApp" */;
 			buildPhases = (
-				DCC1B48C1F387BE0004011E3 /* Sources */,
-				DCC1B48D1F387BE0004011E3 /* Frameworks */,
-				DCC1B48E1F387BE0004011E3 /* Resources */,
-				DCC1B4A61F387C04004011E3 /* Embed Frameworks */,
+				DCD40D491F39AC0100A4168E /* Sources */,
+				DCD40D4A1F39AC0100A4168E /* Frameworks */,
+				DCD40D4B1F39AC0100A4168E /* Resources */,
+				DCD40D631F39B02200A4168E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DCC1B4A51F387C04004011E3 /* PBXTargetDependency */,
+				DCD40D621F39B02200A4168E /* PBXTargetDependency */,
 			);
-			name = CardEntrySample;
-			productName = CardEntrySample;
-			productReference = DCC1B4901F387BE0004011E3 /* CardEntrySample.app */;
+			name = SampleApp;
+			productName = SampleApp;
+			productReference = DCD40D4D1F39AC0100A4168E /* SampleApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -301,7 +308,7 @@
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
 					};
-					DCC1B48F1F387BE0004011E3 = {
+					DCD40D4C1F39AC0100A4168E = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
 					};
@@ -322,7 +329,7 @@
 			targets = (
 				DCC1B45D1F387AF0004011E3 /* iOS Framework */,
 				DCC1B4661F387AF0004011E3 /* PlasticTests */,
-				DCC1B48F1F387BE0004011E3 /* CardEntrySample */,
+				DCD40D4C1F39AC0100A4168E /* SampleApp */,
 			);
 		};
 /* End PBXProject section */
@@ -343,13 +350,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCC1B48E1F387BE0004011E3 /* Resources */ = {
+		DCD40D4B1F39AC0100A4168E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC1B49D1F387BE1004011E3 /* LaunchScreen.storyboard in Resources */,
-				DCC1B49A1F387BE1004011E3 /* Assets.xcassets in Resources */,
-				DCC1B4981F387BE1004011E3 /* Main.storyboard in Resources */,
+				DCD40D5A1F39AC0100A4168E /* LaunchScreen.storyboard in Resources */,
+				DCD40D571F39AC0100A4168E /* Assets.xcassets in Resources */,
+				DCD40D551F39AC0100A4168E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,8 +367,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCD40D431F39A60D00A4168E /* CYCardBrandListView.m in Sources */,
+				DCD40D451F39A60D00A4168E /* CYCardEntryView.m in Sources */,
 				DCC1B4811F387B91004011E3 /* NSString+CoineyAdditions.m in Sources */,
-				DCC1B47C1F387B8A004011E3 /* CYCardEntryView.m in Sources */,
 				DCC1B4AC1F3984C8004011E3 /* UIImage+CoineyAdditions.m in Sources */,
 				DCC1B4861F387B98004011E3 /* UIView+CoineyAdditions.m in Sources */,
 				DCC1B48B1F387BA0004011E3 /* CYCardBrandFunctions.m in Sources */,
@@ -376,12 +384,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCC1B48C1F387BE0004011E3 /* Sources */ = {
+		DCD40D491F39AC0100A4168E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC1B4951F387BE1004011E3 /* ViewController.swift in Sources */,
-				DCC1B4931F387BE1004011E3 /* AppDelegate.swift in Sources */,
+				DCD40D521F39AC0100A4168E /* ViewController.swift in Sources */,
+				DCD40D501F39AC0100A4168E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,26 +401,26 @@
 			target = DCC1B45D1F387AF0004011E3 /* iOS Framework */;
 			targetProxy = DCC1B4691F387AF0004011E3 /* PBXContainerItemProxy */;
 		};
-		DCC1B4A51F387C04004011E3 /* PBXTargetDependency */ = {
+		DCD40D621F39B02200A4168E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DCC1B45D1F387AF0004011E3 /* iOS Framework */;
-			targetProxy = DCC1B4A41F387C04004011E3 /* PBXContainerItemProxy */;
+			targetProxy = DCD40D611F39B02200A4168E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DCC1B4961F387BE1004011E3 /* Main.storyboard */ = {
+		DCD40D531F39AC0100A4168E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DCC1B4971F387BE1004011E3 /* Base */,
+				DCD40D541F39AC0100A4168E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		DCC1B49B1F387BE1004011E3 /* LaunchScreen.storyboard */ = {
+		DCD40D581F39AC0100A4168E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DCC1B49C1F387BE1004011E3 /* Base */,
+				DCD40D591F39AC0100A4168E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -532,6 +540,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coiney.Plastic;
 				PRODUCT_NAME = Plastic;
 				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -549,6 +558,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.coiney.Plastic;
 				PRODUCT_NAME = Plastic;
 				SKIP_INSTALL = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
 			};
 			name = Release;
 		};
@@ -572,32 +582,32 @@
 			};
 			name = Release;
 		};
-		DCC1B4A01F387BE1004011E3 /* Debug */ = {
+		DCD40D5D1F39AC0100A4168E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CardEntrySample/Info.plist;
+				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coiney.CardEntrySample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coiney.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		DCC1B4A11F387BE1004011E3 /* Release */ = {
+		DCD40D5E1F39AC0100A4168E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = CardEntrySample/Info.plist;
+				INFOPLIST_FILE = SampleApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coiney.CardEntrySample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.coiney.SampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -631,11 +641,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DCC1B49F1F387BE1004011E3 /* Build configuration list for PBXNativeTarget "CardEntrySample" */ = {
+		DCD40D5C1F39AC0100A4168E /* Build configuration list for PBXNativeTarget "SampleApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DCC1B4A01F387BE1004011E3 /* Debug */,
-				DCC1B4A11F387BE1004011E3 /* Release */,
+				DCD40D5D1F39AC0100A4168E /* Debug */,
+				DCD40D5E1F39AC0100A4168E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
