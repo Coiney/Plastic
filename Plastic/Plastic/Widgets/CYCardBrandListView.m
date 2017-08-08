@@ -66,6 +66,11 @@ static NSArray *_BrandNames;
     [self _updateLayoutConstraints];
 }
 
+- (void)didMoveToSuperview
+{
+    [self _updateLayoutConstraints];
+}
+
 - (void)_updateLayoutConstraints
 {
     if (_constraints) {
