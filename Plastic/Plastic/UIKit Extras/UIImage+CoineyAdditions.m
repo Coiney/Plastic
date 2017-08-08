@@ -4,15 +4,15 @@
 
 #import "UIImage+CoineyAdditions.h"
 
-@interface PTDummyClass : NSObject  @end
-@implementation PTDummyClass @end
+@interface CYAnchorClass : NSObject @end
+@implementation CYAnchorClass @end
 
 @implementation UIImage (CoineyAdditions)
 
 + (UIImage *)cy_imageNamed:(NSString * const)aName
 {
           return [self imageNamed:aName
-                         inBundle:[NSBundle bundleForClass:[PTDummyClass class]]
+                         inBundle:[NSBundle bundleForClass:[CYAnchorClass class]]
     compatibleWithTraitCollection:nil];
 }
 

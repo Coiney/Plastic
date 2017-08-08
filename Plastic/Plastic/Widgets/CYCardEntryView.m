@@ -145,7 +145,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
                                                  fromDate:[NSDate date]];
     
     NSInteger const month = [[self.text substringToIndex:2] integerValue];
-    NSInteger const year  = [[self.text substringFromIndex:3] integerValue] + today.year / 100 * 100;
+    NSInteger const year = [[self.text substringFromIndex:3] integerValue] + today.year / 100 * 100;
     
     if (year == today.year) {
         return month >= today.month && INRANGE(month, 1, 12);
@@ -182,10 +182,9 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
         [super setText:aText];
     }
     
-    BOOL partiallyValid = self.text.length < 2
-                        || (   INRANGE(self.text.length, 2, 4)
-                            && INRANGE([[self.text substringToIndex:2] integerValue], 1, 12))
-                        || (self.text.length == 5 && self.textIsValidExpiry);
+    BOOL partiallyValid = self.text.length < 2 ||
+                          (INRANGE(self.text.length, 2, 4) && INRANGE([[self.text substringToIndex:2] integerValue], 1, 12)) ||
+                          (self.text.length == 5 && self.textIsValidExpiry);
     
     self.textColor = partiallyValid
                      ? [UIColor darkGrayColor]
@@ -303,12 +302,27 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
         @"cvcField": _cvcField,
         @"clipView": _clipView
     };
-    [_clipView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[numberField(192)]-(4)-[expiryField(68)]-(4)-[cvcField(48)]-|" options:0 metrics:nil views:views]];
-    [_clipView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[numberField]-|" options:0 metrics:nil views:views]];
-    [_clipView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[expiryField]-|" options:0 metrics:nil views:views]];
-    [_clipView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[cvcField]-|" options:0 metrics:nil views:views]];
+    [_clipView addConstraints:
+     [NSLayoutConstraint
+      constraintsWithVisualFormat:@"H:|-[numberField(192)]-(4)-[expiryField(68)]-(4)-[cvcField(48)]-|"
+      options:0 metrics:nil views:views]];
+    [_clipView addConstraints:
+     [NSLayoutConstraint
+      constraintsWithVisualFormat:@"V:|-[numberField]-|"
+      options:0 metrics:nil views:views]];
+    [_clipView addConstraints:
+     [NSLayoutConstraint
+      constraintsWithVisualFormat:@"V:|-[expiryField]-|"
+      options:0 metrics:nil views:views]];
+    [_clipView addConstraints:
+     [NSLayoutConstraint
+      constraintsWithVisualFormat:@"V:|-[cvcField]-|"
+      options:0 metrics:nil views:views]];
     
-    [self addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(12)-[brandIconView]-(8)-[clipView]" options:0 metrics:nil views:views]];
+    [self addConstraints:
+     [NSLayoutConstraint
+      constraintsWithVisualFormat:@"H:|-(12)-[brandIconView]-(8)-[clipView]"
+      options:0 metrics:nil views:views]];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_brandIconView
                                                      attribute:NSLayoutAttributeCenterY
                                                      relatedBy:NSLayoutRelationEqual
@@ -323,6 +337,10 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
                                                      attribute:NSLayoutAttributeCenterY
                                                     multiplier:1
                                                       constant:0]];
+    
+    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.layer.borderWidth = 1;
+    self.layer.cornerRadius = 10;
 }
 
 - (instancetype)initWithFrame:(CGRect)aFrame
@@ -355,9 +373,6 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 {
     [super layoutSubviews];
     [self layoutSubviewsAnimated:NO];
-    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.layer.borderWidth = 1;
-    self.layer.cornerRadius = 10;
 }
 
 - (void)layoutSubviewsAnimated:(BOOL)aAnimated
@@ -520,9 +535,9 @@ shouldChangeCharactersInRange:(NSRange)aRange
 
 - (void)clear
 {
-    _numberField.text    = @"";
-    _expiryField.text    = @"";
-    _cvcField.text       = @"";
+    _numberField.text = @"";
+    _expiryField.text = @"";
+    _cvcField.text = @"";
     self.numberCollapsed = NO;
 }
 
@@ -555,32 +570,17 @@ shouldChangeCharactersInRange:(NSRange)aRange
     NSDateComponents * const today = [calendar components:NSCalendarUnitYear fromDate:[NSDate date]];
     
     NSInteger const month = [[_expiryField.text substringToIndex:2] integerValue];
-    NSInteger const year  = [[_expiryField.text substringFromIndex:3] integerValue] + today.year / 100 * 100;
+    NSInteger const year = [[_expiryField.text substringFromIndex:3] integerValue] + today.year / 100 * 100;
     
     NSDateComponents * const components = [NSDateComponents new];
     components.month = month;
-    components.year  = year;
+    components.year = year;
     return [calendar dateFromComponents:components];
 }
 
 - (NSString *)cvc
 {
     return _cvcField.text;
-}
-
-- (void)setCardNumberPlaceholder:(NSString * const)aText
-{
-    _numberField.placeholder = aText;
-}
-
-- (void)setExpiryPlaceholder:(NSString * const)aText
-{
-    _expiryField.placeholder = aText;
-}
-
-- (void)setCvcPlaceholder:(NSString * const)aText
-{
-    _cvcField.placeholder = aText;
 }
 
 - (void)setNumberCollapsed:(BOOL)aFlag
@@ -602,13 +602,13 @@ shouldChangeCharactersInRange:(NSRange)aRange
     if (aFlag) {
         _numberField.inputView = nil;
         _expiryField.inputView = nil;
-        _cvcField.inputView    = nil;
+        _cvcField.inputView = nil;
     }
     else {
         UIView * const placeholderView = [UIView new];
         _numberField.inputView = placeholderView;
         _expiryField.inputView = placeholderView;
-        _cvcField.inputView    = placeholderView;
+        _cvcField.inputView = placeholderView;
     }
 }
 

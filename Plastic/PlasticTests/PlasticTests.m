@@ -3,7 +3,7 @@
 //  PlasticTests
 //
 //  Created by Ken Myers on 2017/08/07.
-//  Copyright © 2017年 Coiney. All rights reserved.
+//  Copyright © 2017 Coiney. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
