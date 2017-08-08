@@ -9,7 +9,7 @@
 import UIKit
 import Plastic
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CYCardEntryViewDelegate {
     
     // Card number entry
     @IBOutlet var cardEntryView: CYCardEntryView?
@@ -20,9 +20,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
         cardEntryView?.collapsesCardNumberField = true;
         cardEntryView?.hintLabel = hintLabel
+        cardEntryView?.delegate = self
         brandListView?.brandMask = CYCardBrandMask.all
     }
     
+    func cardEntryView(_ aView: CYCardEntryView!, validityDidChange aFlag: Bool) {
+        self.navigationItem.rightBarButtonItem?.isEnabled = aFlag
+    }
+
 }
