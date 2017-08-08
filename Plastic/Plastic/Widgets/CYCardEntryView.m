@@ -47,7 +47,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 - (instancetype)init
 {
-    if ((self = [super init])) {
+    if (self = [super init]) {
         self.keyboardType = UIKeyboardTypeNumberPad;
     }
     return self;
@@ -126,7 +126,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 - (instancetype)init
 {
-    if ((self = [super init])) {
+    if (self = [super init]) {
         self.keyboardType = UIKeyboardTypeNumberPad;
     }
     return self;
@@ -223,7 +223,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 - (instancetype)init
 {
-    if ((self = [super init])) {
+    if (self = [super init]) {
         self.keyboardType = UIKeyboardTypeNumberPad;
         self.enabled = NO;
         self.textColor = [UIColor darkGrayColor];
@@ -328,7 +328,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 - (instancetype)initWithFrame:(CGRect)aFrame
 {
-    if ((self = [super initWithFrame:aFrame])) {
+    if (self = [super initWithFrame:aFrame]) {
         [self _init];
     }
     return self;
@@ -336,7 +336,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
-    if ((self = [super initWithCoder:aDecoder])) {
+    if (self = [super initWithCoder:aDecoder]) {
         [self _init];
     }
     return self;
@@ -344,7 +344,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 
 - (instancetype)init
 {
-    if ((self = [super init])) {
+    if (self = [super init]) {
         [self _init];
     }
     return self;
@@ -714,7 +714,7 @@ UIImage * _CYImageForCardBrand(CYCardBrand const aCardBrand)
         UIImage * icon = [icons objectForKey:@(aCardBrand)];
         if (!icon) {
             NSString * const imageName =
-                [NSString stringWithFormat:@"CardIssuer%@", NSStringFromCYCardBrand(aCardBrand)];
+                [NSString stringWithFormat:@"CardIssuer%@", NSStringFromCardBrand(aCardBrand)];
             icon = [UIImage cy_imageNamed:imageName];
             if (icon) {
                 [icons setObject:icon forKey:@(aCardBrand)];

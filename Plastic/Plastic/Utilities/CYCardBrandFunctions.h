@@ -25,6 +25,6 @@ typedef NS_ENUM(NSInteger, CYCardBrand) {
 CYCardBrand CYCardBrandFromNumber(NSString * aCardNumber);
 NSUInteger NumberOfDigitsForCardBrand(CYCardBrand aCardBrand);
 NSUInteger CVCLengthForCardBrand(CYCardBrand aCardBrand);
-NSString * NSStringFromCYCardBrand(CYCardBrand aCardBrand);
+NSString * NSStringFromCardBrand(CYCardBrand aCardBrand);
 BOOL LuhnCheck(NSString * aCardNumber);
 NSString * CYFormatCardNumber(NSString * aCardNumber);

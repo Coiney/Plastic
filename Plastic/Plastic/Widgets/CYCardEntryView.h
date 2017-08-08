@@ -3,7 +3,7 @@
 // For licensing information, contact info@coiney.com.
 
 #import <UIKit/UIKit.h>
-#import "CYCardBrandFunctions.h"
+#import <Plastic/CYCardBrandFunctions.h>
 //#import "CYKeypadView.h"
 
 @class CYCardEntryView;

@@ -50,7 +50,7 @@ NSUInteger CVCLengthForCardBrand(CYCardBrand const aCardBrand)
     return aCardBrand == CYAmericanExpress ? 4 : 3;
 }
 
-NSString * NSStringFromCYCardBrand(CYCardBrand const aCardBrand)
+NSString * NSStringFromCardBrand(CYCardBrand const aCardBrand)
 {
     switch (aCardBrand) {
         case CYVisa:
