@@ -284,16 +284,19 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
     _numberField = [CYCardNumberField new];
     _numberField.delegate = self;
     _numberField.translatesAutoresizingMaskIntoConstraints = NO;
+    _numberField.placeholder = @"Card number";
     [_clipView addSubview:_numberField];
     
     _expiryField = [CYCardExpiryField new];
     _expiryField.delegate = self;
     _expiryField.translatesAutoresizingMaskIntoConstraints = NO;
+    _expiryField.placeholder = @"MM/YY";
     [_clipView addSubview:_expiryField];
     
     _cvcField = [CYCardCVCField new];
     _cvcField.delegate = self;
     _cvcField.translatesAutoresizingMaskIntoConstraints = NO;
+    _cvcField.placeholder = @"CVC";
     [_clipView addSubview:_cvcField];
     
     NSDictionary * const views = @{
