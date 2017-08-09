@@ -21,6 +21,11 @@
 @property(nonatomic, assign) BOOL collapsesCardNumberField;
 @property(nonatomic, weak) UILabel *hintLabel;
 
+// Appearance
+@property UIColor *borderColor;
+@property CGFloat borderWidth;
+@property CGFloat cornerRadius;
+
 @property(nonatomic, weak) id<CYCardEntryViewDelegate> delegate;
 
 - (instancetype)initWithFrame:(CGRect)aFrame;

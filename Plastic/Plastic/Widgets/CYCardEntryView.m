@@ -267,6 +267,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 @end
 
 @implementation CYCardEntryView
+@dynamic borderWidth, cornerRadius;
 
 - (void)_init
 {
@@ -692,6 +693,29 @@ shouldChangeCharactersInRange:(NSRange)aRange
     else {
         _hintLabel.text = @"Enter card number";
     }
+}
+
+- (id)forwardingTargetForSelector:(SEL const)aSelector
+{
+    if (aSelector == @selector(borderWidth) ||
+        aSelector == @selector(setBorderWidth:) ||
+        aSelector == @selector(cornerRadius) ||
+        aSelector == @selector(setCornerRadius:)) {
+        return self.layer;
+    }
+    else {
+        return nil;
+    }
+}
+
+- (UIColor *)borderColor
+{
+    return [UIColor colorWithCGColor:self.layer.borderColor];
+}
+
+- (void)setBorderColor:(UIColor * const)aColor
+{
+    self.layer.borderColor = aColor.CGColor;
 }
 
 @end
