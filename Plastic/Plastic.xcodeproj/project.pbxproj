@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1387581F3B1FD600CCBBAB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC13875A1F3B1FD600CCBBAB /* Localizable.strings */; };
+		DC13875E1F3B20A100CCBBAB /* NSBundle+CoineyAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DC13875C1F3B20A100CCBBAB /* NSBundle+CoineyAdditions.h */; };
+		DC13875F1F3B20A100CCBBAB /* NSBundle+CoineyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DC13875D1F3B20A100CCBBAB /* NSBundle+CoineyAdditions.m */; };
 		DCC1B4681F387AF0004011E3 /* Plastic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1B45E1F387AF0004011E3 /* Plastic.framework */; };
 		DCC1B46D1F387AF0004011E3 /* CYCardEntryViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1B46C1F387AF0004011E3 /* CYCardEntryViewTests.m */; };
 		DCC1B46F1F387AF0004011E3 /* Plastic.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1B4611F387AF0004011E3 /* Plastic.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -75,6 +78,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC1387551F3B1E3A00CCBBAB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		DC1387591F3B1FD600CCBBAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DC13875B1F3B1FD800CCBBAB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DC13875C1F3B20A100CCBBAB /* NSBundle+CoineyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+CoineyAdditions.h"; sourceTree = "<group>"; };
+		DC13875D1F3B20A100CCBBAB /* NSBundle+CoineyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+CoineyAdditions.m"; sourceTree = "<group>"; };
 		DCC1B45E1F387AF0004011E3 /* Plastic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Plastic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC1B4611F387AF0004011E3 /* Plastic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plastic.h; sourceTree = "<group>"; };
 		DCC1B4621F387AF0004011E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 				DCC1B4611F387AF0004011E3 /* Plastic.h */,
 				DCC1B4A71F3983DE004011E3 /* Icons.xcassets */,
 				DCC1B4621F387AF0004011E3 /* Info.plist */,
+				DC13875A1F3B1FD600CCBBAB /* Localizable.strings */,
 			);
 			path = Plastic;
 			sourceTree = "<group>";
@@ -182,6 +191,8 @@
 		DCC1B47D1F387B91004011E3 /* Foundation Extras */ = {
 			isa = PBXGroup;
 			children = (
+				DC13875C1F3B20A100CCBBAB /* NSBundle+CoineyAdditions.h */,
+				DC13875D1F3B20A100CCBBAB /* NSBundle+CoineyAdditions.m */,
 				DCC1B47E1F387B91004011E3 /* NSString+CoineyAdditions.h */,
 				DCC1B47F1F387B91004011E3 /* NSString+CoineyAdditions.m */,
 			);
@@ -243,6 +254,7 @@
 			files = (
 				DCC1B48A1F387BA0004011E3 /* CYCardBrandFunctions.h in Headers */,
 				DCD40D421F39A60D00A4168E /* CYCardBrandListView.h in Headers */,
+				DC13875E1F3B20A100CCBBAB /* NSBundle+CoineyAdditions.h in Headers */,
 				DCD40D441F39A60D00A4168E /* CYCardEntryView.h in Headers */,
 				DCD40D6C1F39D15400A4168E /* CYKeypad.h in Headers */,
 				DCC1B4801F387B91004011E3 /* NSString+CoineyAdditions.h in Headers */,
@@ -341,8 +353,8 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				ja,
 			);
 			mainGroup = DCC1B4541F387AF0004011E3;
 			productRefGroup = DCC1B45F1F387AF0004011E3 /* Products */;
@@ -361,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1387581F3B1FD600CCBBAB /* Localizable.strings in Resources */,
 				DCC1B4A81F3983DE004011E3 /* Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCD40D431F39A60D00A4168E /* CYCardBrandListView.m in Sources */,
+				DC13875F1F3B20A100CCBBAB /* NSBundle+CoineyAdditions.m in Sources */,
 				DCD40D451F39A60D00A4168E /* CYCardEntryView.m in Sources */,
 				DCD40D6D1F39D15400A4168E /* CYKeypad.m in Sources */,
 				DCC1B4811F387B91004011E3 /* NSString+CoineyAdditions.m in Sources */,
@@ -439,10 +453,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		DC13875A1F3B1FD600CCBBAB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC1387591F3B1FD600CCBBAB /* Base */,
+				DC13875B1F3B1FD800CCBBAB /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		DCD40D531F39AC0100A4168E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DCD40D541F39AC0100A4168E /* Base */,
+				DC1387551F3B1E3A00CCBBAB /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -462,6 +486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -514,6 +539,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

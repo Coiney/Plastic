@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Plastic
+
+  Created by Ken Myers on 2017/08/09.
+  Copyright © 2017 Coiney. All rights reserved.
+*/
+
+"CARD_NUMBER"                 = "Card number";
+"EXPIRY_PLACEHOLDER"          = "MM/YY";
+"CVC"                         = "CVC";
+"ENTER_CARD_NUMBER"           = "Enter card number";
+"ENTER_EXPIRATION"            = "Enter 4-digit expiration";
+"ENTER_THREE_DIGIT_CVC"       = "Enter 3-digit security code on back of card";
+"ENTER_FOUR_DIGIT_CVC"        = "Enter 4-digit security code on front of card";

@@ -3,6 +3,7 @@
 // For licensing information, contact info@coiney.com.
 
 #import "CYCardEntryView.h"
+#import "NSBundle+CoineyAdditions.h"
 #import "NSString+CoineyAdditions.h"
 #import "UIImage+CoineyAdditions.h"
 #import "UIView+CoineyAdditions.h"
@@ -284,19 +285,19 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
     _numberField = [CYCardNumberField new];
     _numberField.delegate = self;
     _numberField.translatesAutoresizingMaskIntoConstraints = NO;
-    _numberField.placeholder = @"Card number";
+    _numberField.placeholder = LocalizedString(@"CARD_NUMBER");
     [_clipView addSubview:_numberField];
     
     _expiryField = [CYCardExpiryField new];
     _expiryField.delegate = self;
     _expiryField.translatesAutoresizingMaskIntoConstraints = NO;
-    _expiryField.placeholder = @"MM/YY";
+    _expiryField.placeholder = LocalizedString(@"EXPIRY_PLACEHOLDER");
     [_clipView addSubview:_expiryField];
     
     _cvcField = [CYCardCVCField new];
     _cvcField.delegate = self;
     _cvcField.translatesAutoresizingMaskIntoConstraints = NO;
-    _cvcField.placeholder = @"CVC";
+    _cvcField.placeholder = LocalizedString(@"CVC");
     [_clipView addSubview:_cvcField];
     
     NSDictionary * const views = @{
@@ -692,14 +693,14 @@ shouldChangeCharactersInRange:(NSRange)aRange
 {
     if ([self cy_findFirstResponder] == _cvcField) {
         _hintLabel.text = self.cardBrand == CYAmericanExpress
-                          ? @"Enter 4-digit security code on front of card"
-                          : @"Enter 3-digit security code on back of card";
+                          ? LocalizedString(@"ENTER_FOUR_DIGIT_CVC")
+                          : LocalizedString(@"ENTER_THREE_DIGIT_CVC");
     }
     else if ([self cy_findFirstResponder] == _expiryField) {
-        _hintLabel.text = @"Enter 4-digit expiration";
+        _hintLabel.text = LocalizedString(@"ENTER_EXPIRATION");
     }
     else {
-        _hintLabel.text = @"Enter card number";
+        _hintLabel.text = LocalizedString(@"ENTER_CARD_NUMBER");
     }
 }
 

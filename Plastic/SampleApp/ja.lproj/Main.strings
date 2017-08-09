@@ -1,0 +1,6 @@
+
+/* Class = "UINavigationItem"; title = "Pay by Credit Card"; ObjectID = "CwE-GW-dET"; */
+"CwE-GW-dET.title" = "お支払い";
+
+/* Class = "UIBarButtonItem"; title = "Pay"; ObjectID = "kMW-9f-cFh"; */
+"kMW-9f-cFh.title" = "入力完了";
