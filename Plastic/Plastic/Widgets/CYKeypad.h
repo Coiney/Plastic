@@ -4,6 +4,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, CYKeypadKey) {
+    kCYKeypadZero = 1000,
+    kCYKeypadDelete
+};
+
 @class CYKeypad;
 
 @protocol CYKeypadDelegate <NSObject>

@@ -4,11 +4,6 @@
 
 #import "CYKeypad.h"
 
-typedef NS_ENUM(NSInteger, CYKeypadKey) {
-    kCYKeypadZero = 1000,
-    kCYKeypadDelete
-};
-
 static float const kCYKeypadButtonBorderThickness = 0.5;
 static NSInteger const kRowCount = 4;
 static NSInteger const kColumnCount = 3;

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DCC1B4681F387AF0004011E3 /* Plastic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1B45E1F387AF0004011E3 /* Plastic.framework */; };
-		DCC1B46D1F387AF0004011E3 /* PlasticTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1B46C1F387AF0004011E3 /* PlasticTests.m */; };
+		DCC1B46D1F387AF0004011E3 /* CYCardEntryViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1B46C1F387AF0004011E3 /* CYCardEntryViewTests.m */; };
 		DCC1B46F1F387AF0004011E3 /* Plastic.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1B4611F387AF0004011E3 /* Plastic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCC1B4801F387B91004011E3 /* NSString+CoineyAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = DCC1B47E1F387B91004011E3 /* NSString+CoineyAdditions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		DCC1B4811F387B91004011E3 /* NSString+CoineyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC1B47F1F387B91004011E3 /* NSString+CoineyAdditions.m */; };
@@ -32,9 +32,18 @@
 		DCD40D601F39B02200A4168E /* Plastic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DCC1B45E1F387AF0004011E3 /* Plastic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DCD40D6C1F39D15400A4168E /* CYKeypad.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD40D6A1F39D15400A4168E /* CYKeypad.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCD40D6D1F39D15400A4168E /* CYKeypad.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD40D6B1F39D15400A4168E /* CYKeypad.m */; };
+		DCD40D731F3AC79A00A4168E /* CYCardBrandListViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD40D711F3AC79A00A4168E /* CYCardBrandListViewTests.m */; };
+		DCD40D741F3AC79A00A4168E /* CYKeypadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD40D721F3AC79A00A4168E /* CYKeypadTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DC1387491F3AF4FF00CCBBAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC1B4551F387AF0004011E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCD40D4C1F39AC0100A4168E;
+			remoteInfo = SampleApp;
+		};
 		DCC1B4691F387AF0004011E3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DCC1B4551F387AF0004011E3 /* Project object */;
@@ -70,7 +79,7 @@
 		DCC1B4611F387AF0004011E3 /* Plastic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plastic.h; sourceTree = "<group>"; };
 		DCC1B4621F387AF0004011E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC1B4671F387AF0004011E3 /* PlasticTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlasticTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCC1B46C1F387AF0004011E3 /* PlasticTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlasticTests.m; sourceTree = "<group>"; };
+		DCC1B46C1F387AF0004011E3 /* CYCardEntryViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYCardEntryViewTests.m; sourceTree = "<group>"; };
 		DCC1B46E1F387AF0004011E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCC1B47E1F387B91004011E3 /* NSString+CoineyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+CoineyAdditions.h"; sourceTree = "<group>"; };
 		DCC1B47F1F387B91004011E3 /* NSString+CoineyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CoineyAdditions.m"; sourceTree = "<group>"; };
@@ -94,6 +103,8 @@
 		DCD40D5B1F39AC0100A4168E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCD40D6A1F39D15400A4168E /* CYKeypad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYKeypad.h; sourceTree = "<group>"; };
 		DCD40D6B1F39D15400A4168E /* CYKeypad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYKeypad.m; sourceTree = "<group>"; };
+		DCD40D711F3AC79A00A4168E /* CYCardBrandListViewTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCardBrandListViewTests.m; sourceTree = "<group>"; };
+		DCD40D721F3AC79A00A4168E /* CYKeypadTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYKeypadTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +171,9 @@
 		DCC1B46B1F387AF0004011E3 /* PlasticTests */ = {
 			isa = PBXGroup;
 			children = (
-				DCC1B46C1F387AF0004011E3 /* PlasticTests.m */,
+				DCD40D711F3AC79A00A4168E /* CYCardBrandListViewTests.m */,
+				DCC1B46C1F387AF0004011E3 /* CYCardEntryViewTests.m */,
+				DCD40D721F3AC79A00A4168E /* CYKeypadTests.m */,
 				DCC1B46E1F387AF0004011E3 /* Info.plist */,
 			);
 			path = PlasticTests;
@@ -272,6 +285,7 @@
 			);
 			dependencies = (
 				DCC1B46A1F387AF0004011E3 /* PBXTargetDependency */,
+				DC13874A1F3AF4FF00CCBBAB /* PBXTargetDependency */,
 			);
 			name = PlasticTests;
 			productName = PlasticTests;
@@ -314,6 +328,7 @@
 					DCC1B4661F387AF0004011E3 = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
+						TestTargetID = DCD40D4C1F39AC0100A4168E;
 					};
 					DCD40D4C1F39AC0100A4168E = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -388,7 +403,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCC1B46D1F387AF0004011E3 /* PlasticTests.m in Sources */,
+				DCD40D731F3AC79A00A4168E /* CYCardBrandListViewTests.m in Sources */,
+				DCC1B46D1F387AF0004011E3 /* CYCardEntryViewTests.m in Sources */,
+				DCD40D741F3AC79A00A4168E /* CYKeypadTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +421,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DC13874A1F3AF4FF00CCBBAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCD40D4C1F39AC0100A4168E /* SampleApp */;
+			targetProxy = DC1387491F3AF4FF00CCBBAB /* PBXContainerItemProxy */;
+		};
 		DCC1B46A1F387AF0004011E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DCC1B45D1F387AF0004011E3 /* iOS Framework */;
@@ -573,20 +595,24 @@
 		DCC1B4761F387AF0004011E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = PlasticTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coiney.PlasticTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp.app/SampleApp";
 			};
 			name = Debug;
 		};
 		DCC1B4771F387AF0004011E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = PlasticTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coiney.PlasticTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SampleApp.app/SampleApp";
 			};
 			name = Release;
 		};
