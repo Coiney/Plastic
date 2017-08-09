@@ -305,7 +305,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
     };
     [_clipView addConstraints:
      [NSLayoutConstraint
-      constraintsWithVisualFormat:@"H:|-[numberField(192)]-(4)-[expiryField(68)]-(4)-[cvcField(48)]-|"
+      constraintsWithVisualFormat:@"H:|-[numberField(192)]-4-[expiryField(68)]-4-[cvcField(48)]"
       options:0 metrics:nil views:views]];
     [_clipView addConstraints:
      [NSLayoutConstraint
@@ -322,7 +322,7 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
     
     [self addConstraints:
      [NSLayoutConstraint
-      constraintsWithVisualFormat:@"H:|-(12)-[brandIconView]-(8)-[clipView]"
+      constraintsWithVisualFormat:@"H:|-12-[brandIconView(38)]-8-[clipView]-8-|"
       options:0 metrics:nil views:views]];
     [self addConstraint:[NSLayoutConstraint constraintWithItem:_brandIconView
                                                      attribute:NSLayoutAttributeCenterY
@@ -371,12 +371,17 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
 - (void)layoutSubviewsAnimated:(BOOL)aAnimated
 {
     if (_collapsesCardNumberField) {
-        CGAffineTransform const moveLeft =
-            CGAffineTransformMakeTranslation(
-                self.bounds.size.width - _clipView.bounds.size.width - _clipView.frame.origin.x, 0
-            );
-        CGAffineTransform const transform = _numberCollapsed ? moveLeft : CGAffineTransformIdentity;
-        
+        CGAffineTransform transform;
+        if (_numberCollapsed) {
+            CGFloat const dx =
+                self.bounds.size.width - _numberField.bounds.size.width -
+                _expiryField.bounds.size.width - _cvcField.bounds.size.width -
+                CGRectGetMinX(_clipView.frame) - 24;
+            transform = CGAffineTransformMakeTranslation(dx, 0);
+        }
+        else {
+            transform = CGAffineTransformIdentity;
+        }
         [UIView animateWithDuration:(aAnimated ? 0.3 : 0)
                          animations:^{
                              _numberField.transform = transform;
