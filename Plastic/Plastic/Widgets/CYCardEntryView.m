@@ -359,14 +359,6 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
     return self;
 }
 
-- (instancetype)init
-{
-    if (self = [super init]) {
-        [self _init];
-    }
-    return self;
-}
-
 #pragma mark - Drawing
 
 - (void)layoutSubviews

@@ -20,9 +20,8 @@ typedef NS_ENUM(NSInteger, CYKeypadKey) {
 @interface CYKeypad : UIControl
 @property(nonatomic, weak) id<CYKeypadDelegate> delegate;
 
-- (instancetype)init;
-- (instancetype)initWithCoder:(NSCoder *)aDecoder;
 - (instancetype)initWithFrame:(CGRect)aFrame;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder;
 
 - (void)sizeToFit;
 @end

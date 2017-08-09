@@ -59,9 +59,9 @@ static NSArray *_BrandNames;
     }
 }
 
-- (instancetype)init
+- (instancetype)initWithFrame:(CGRect const)aFrame
 {
-    if (self = [super init]) {
+    if (self = [super initWithFrame:aFrame]) {
         [self _init];
     }
     return self;

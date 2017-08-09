@@ -7,4 +7,7 @@
 
 @interface CYCardBrandListView : UIView
 @property(nonatomic) CYCardBrandMask brandMask;
+
+- (instancetype)initWithFrame:(CGRect)aFrame;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder;
 @end

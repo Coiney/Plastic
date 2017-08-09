@@ -100,14 +100,6 @@ static NSInteger const kColumnCount = 3;
 #undef Btn
 }
 
-- (instancetype)init
-{
-    if (self = [super init]) {
-        [self _init];
-    }
-    return self;
-}
-
 - (instancetype)initWithFrame:(CGRect const)aFrame
 {
     if (self = [super initWithFrame:aFrame]) {

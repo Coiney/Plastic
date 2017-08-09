@@ -23,6 +23,9 @@
 
 @property(nonatomic, weak) id<CYCardEntryViewDelegate> delegate;
 
+- (instancetype)initWithFrame:(CGRect)aFrame;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder;
+
 - (void)setUsesSystemKeyboard:(BOOL)aFlag;  // YES by default
 
 // Use with a custom keypad widget, i.e., when not using the system keyboard
