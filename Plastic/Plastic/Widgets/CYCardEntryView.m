@@ -425,7 +425,7 @@ shouldChangeCharactersInRange:(NSRange)aRange
     
     if (aField == _numberField) {
         _numberField.cardNumber = newValue;
-        _cvcField.enabled       = self.cardBrand != CYUnknownCardBrand;
+        _cvcField.enabled = self.cardBrand != CYUnknownCardBrand;
         [self updateIcon];
         if (_numberField.textIsValidCardNumber) {
             self.numberCollapsed = YES;
