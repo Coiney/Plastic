@@ -24,17 +24,27 @@ class ViewController: UIViewController, CYCardEntryViewDelegate, CYKeypadDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem?.isEnabled = false
+        
+        // Set up accepted brands list
+        brandListView?.brandMask = CYCardBrandMask.all
+        
+        // Set up card number field
         cardEntryView?.collapsesCardNumberField = true;
         cardEntryView?.hintLabel = hintLabel
         cardEntryView?.updateHintLabel()
         cardEntryView?.setUsesSystemKeyboard(false)
         cardEntryView?.delegate = self
-        brandListView?.brandMask = CYCardBrandMask.all
+        
+        // Set up keypad
         keypad?.delegate = self
     }
     
     func cardEntryView(_ aView: CYCardEntryView!, validityDidChange aFlag: Bool) {
         self.navigationItem.rightBarButtonItem?.isEnabled = aFlag
+        
+        if (aFlag) {
+            // Send aView.cardNumber, aView.expiryDate, and aView.cvc to your payment processor
+        }
     }
     
     func keypadDidPressBackspace(_ aView: CYKeypad!) {
