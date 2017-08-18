@@ -39,6 +39,11 @@ class ViewController: UIViewController, CYCardEntryViewDelegate, CYKeypadDelegat
         keypad?.delegate = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        cardEntryView?.becomeFirstResponder()
+    }
+    
     func cardEntryView(_ aView: CYCardEntryView!, validityDidChange aFlag: Bool) {
         self.navigationItem.rightBarButtonItem?.isEnabled = aFlag
         
