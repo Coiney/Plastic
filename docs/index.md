@@ -1,37 +1,34 @@
-## Welcome to GitHub Pages
+# Plastic
 
-You can use the [editor on GitHub](https://github.com/Coiney/Plastic/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+A collection of credit card-related widgets for iOS apps.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Overview
 
-### Markdown
+The Plastic framework contains the following UI components.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### CYCardBrandListView
 
-```markdown
-Syntax highlighted code block
+`CYCardBrandListView` shows a list of card brands, useful for indicating which brands are accepted.  It can display any combination of Visa, MasterCard, JCB, American Express, Diners Club, and Discover logos.
 
-# Header 1
-## Header 2
-### Header 3
+### CYCardEntryView
 
-- Bulleted
-- List
+`CYCardEntryView` facilitates entering a credit card number, expiration, and card verification code.
 
-1. Numbered
-2. List
+The card number is Luhn-checked, and the expiration is checked against the current date.  If either check fails, text is shown in red to indicate the error.
 
-**Bold** and _Italic_ and `Code` text
+The CVC field accepts four digits for American Express, and three for other brands.
 
-[Link](url) and ![Image](src)
-```
+Once the user has entered their card number, expiration, and CVC, the embedding app is notified by a `CYCardEntryViewDelegate` method, at which point the credit card information can be obtained from the `CYCardEntryView` and sent over to a payment processor.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### CYKeypad
 
-### Jekyll Themes
+`CYKeypad` is a numeric keypad widget that can be used with `CYCardEntryView`.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Coiney/Plastic/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Usage
 
-### Support or Contact
+See the sample app in `Plastic.xcodeproj` for an example of how to add Plastic to your project.  The sample app demonstrates the functionality of all three widgets.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Requirements
+
+* Xcode 8
+* iOS 8.0 and above
