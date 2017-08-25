@@ -1,3 +1,5 @@
+_VISA, MasterCard, JCB, American Express, Diners Club, Discover and their logos are trademarks or registered trademarks of their respective owners._
+
 # Plastic
 
 A collection of credit card-related widgets for iOS apps.
