@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Coiney/Plastic.svg?branch=master)](https://travis-ci.com/Coiney/Plastic)
+
 _VISA, MasterCard, JCB, American Express, Diners Club, Discover and their logos are trademarks or registered trademarks of their respective owners._
 
 # Plastic
