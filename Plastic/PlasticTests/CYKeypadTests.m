@@ -90,7 +90,7 @@
     XCTAssertEqual(_typeOfKeyPressed, 9);
     // 0
     [[_keypad viewWithTag:kCYKeypadZero] sendActionsForControlEvents:UIControlEventTouchUpInside];
-    XCTAssertEqual(_typeOfKeyPressed, kCYKeypadZero);
+    XCTAssertEqual(_typeOfKeyPressed, 0);
 }
 
 - (void)keypadDidPressBackspace:(CYKeypad * const)aView

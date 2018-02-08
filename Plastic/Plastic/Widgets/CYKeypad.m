@@ -211,7 +211,8 @@ static NSInteger const kColumnCount = 3;
         [_delegate keypadDidPressBackspace:self];
     }
     else {
-        [_delegate keypad:self didPressNumericalKey:aKey.tag];
+        NSUInteger const number = aKey.tag == kCYKeypadZero ? 0 : aKey.tag;
+        [_delegate keypad:self didPressNumericalKey:number];
     }
 }
 
