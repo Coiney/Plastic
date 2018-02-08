@@ -1,7 +1,3 @@
-// CoineyKit
-// Copyright © Coiney Inc. All rights reserved.
-// For licensing information, contact info@coiney.com.
-
 #import "CYCardBrandFunctions.h"
 #import "NSString+CoineyAdditions.h"
 

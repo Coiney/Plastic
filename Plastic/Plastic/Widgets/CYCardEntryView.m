@@ -1,7 +1,3 @@
-// CoineyKit
-// Copyright © Coiney Inc. All rights reserved.
-// For licensing information, contact info@coiney.com.
-
 #import "CYCardEntryView.h"
 #import "NSBundle+CoineyAdditions.h"
 #import "NSString+CoineyAdditions.h"
