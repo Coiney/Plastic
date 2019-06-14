@@ -36,5 +36,5 @@ See the sample app in `Plastic.xcodeproj` for an example of how to add Plastic t
 
 ## Requirements
 
-* Xcode 8
+* Xcode 10
 * iOS 8.0 and above

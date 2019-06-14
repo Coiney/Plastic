@@ -384,9 +384,9 @@ static UIImage * _CYImageForCardBrand(CYCardBrand aCardBrand);
         }
         [UIView animateWithDuration:(aAnimated ? 0.3 : 0)
                          animations:^{
-                             _numberField.transform = transform;
-                             _expiryField.transform = transform;
-                             _cvcField.transform = transform;
+                             self->_numberField.transform = transform;
+                             self->_expiryField.transform = transform;
+                             self->_cvcField.transform = transform;
                          }];
     }
 }
@@ -649,7 +649,7 @@ shouldChangeCharactersInRange:(NSRange)aRange
                                   delay:0
                                 options:UIViewAnimationOptionCurveEaseIn
                              animations:^{
-                                 _brandIconView.layer.transform = CATransform3DMakeScale(1.8, 1.8, 1.0);
+                                 self->_brandIconView.layer.transform = CATransform3DMakeScale(1.8, 1.8, 1.0);
                              }
                              completion:nil];
         }
@@ -661,8 +661,8 @@ shouldChangeCharactersInRange:(NSRange)aRange
                           duration:0.2
                            options:animation
                         animations:^{
-                            _brandIconView.image = icon;
-                            _brandIconView.layer.transform = CATransform3DIdentity;
+                            self->_brandIconView.image = icon;
+                            self->_brandIconView.layer.transform = CATransform3DIdentity;
                         }
                         completion:nil];
     }
@@ -679,7 +679,7 @@ shouldChangeCharactersInRange:(NSRange)aRange
                           duration:0.25
                            options:animation
                         animations:^{
-                            _brandIconView.image = icon;
+                            self->_brandIconView.image = icon;
                         }
                         completion:nil];
     }
