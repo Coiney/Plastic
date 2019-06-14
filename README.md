@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/Coiney/Plastic.svg?branch=master)](https://travis-ci.com/Coiney/Plastic)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 _VISA, MasterCard, JCB, American Express, Diners Club, Discover and their logos are trademarks or registered trademarks of their respective owners._
 
